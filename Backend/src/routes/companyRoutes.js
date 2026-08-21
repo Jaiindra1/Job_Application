@@ -1,0 +1,1 @@
+const r=require('express').Router(),a=require('../middleware/asyncHandler'),c=require('../controllers/companyController');r.get('/',a(c.list));r.get('/:companyName/jobs',a(c.jobs));r.get('/:companyName',a(c.one));module.exports=r;

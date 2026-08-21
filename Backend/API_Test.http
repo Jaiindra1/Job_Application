@@ -1,0 +1,102 @@
+###
+login: {{Admin@gmail.com}}
+Password: {{Jaisriram}}
+### Gmail OAuth (requires a login token and configured Google OAuth variables)
+GET http://localhost:7000/api/gmail/status
+Authorization: Bearer {{authToken}}
+
+### Returns the Google consent URL; open data.authUrl in a browser
+GET http://localhost:7000/api/gmail/auth
+Authorization: Bearer {{authToken}}
+
+### Explicit Gmail sync
+POST http://localhost:7000/api/gmail/sync
+Authorization: Bearer {{authToken}}
+### Import jobs from Adzuna (replace token with a login token)
+POST http://localhost:7000/api/jobs/import/adzuna
+Authorization: Bearer {{authToken}}
+Content-Type: application/json
+
+{
+  "what": "React Developer",
+  "where": "Hyderabad",
+  "page": 1,
+  "resultsPerPage": 10
+}
+
+###
+curl -X POST http://localhost:7000/api/jobs
+-H "Content-Type: application/json"
+-d '{
+  "title": "Frontend Developer",
+  "company": "Microsoft",
+  "location": "Hyderabad",
+  "description": "Build modern web applications using React and TypeScript.",
+  "skills": [
+    "React",
+    "JavaScript",
+    "TypeScript",
+    "Node.js"
+  ],
+  "experience": "2-4 years",
+  "salary": "₹10-18 LPA",
+  "jobType": "Full-time",
+  "workMode": "Hybrid",
+  "source": "Adzuna",
+  "sourceJobId": "adzuna-12345",
+  "originalUrl": "https://example.com/jobs/frontend-developer",
+  "postedAt": "2026-08-12T08:00:00.000Z"
+}'
+
+###
+curl -X GET http://localhost:7000/api/jobs
+###
+curl -X GET http://localhost:7000/api/jobs/6a7c3c3357b42acf09789f39
+###
+curl -X GET http://localhost:7000/api/jobs?title=Frontend%20Developer&location=Hyderabad&skills=React,JavaScript&experience=2-4%20years&salary=₹10-18%20LPA&jobType=Full-time&workMode=Hybrid&source=Adzuna
+###
+curl -X GET http://localhost:7000/api/jobs?search=React
+###
+curl -X GET http://localhost:7000/api/jobs?location=Hyderabad
+###
+curl -X GET http://localhost:7000/api/jobs?workMode=Hybrid
+###
+curl -X GET http://localhost:7000/api/jobs?jobType=Full-time
+###
+curl -X GET http://localhost:7000/api/jobs?page=1&limit=5
+###
+curl -X GET http://localhost:7000/api/jobs?search=TypeScript
+###
+curl -X POST http://localhost:7000/api/savedJobs
+-H "Content-Type: application/json"
+-d '{
+  "jobId": "6a7c3c3357b42acf09789f39",
+  "notes": "This is a great opportunity!"
+}'
+###
+curl -X GET http://localhost:7000/api/savedJobs
+###
+curl -X DELETE http://localhost:7000/api/savedJobs/6a7c3c3357b42acf09789f39
+###
+curl -X GET http://localhost:7000/api/jobs
+###
+curl -X POST http://localhost:7000/api/applications
+-H "Content-Type: application/json"
+-d '{
+  "jobId": "6a7c3c3357b42acf09789f39",
+  "applicantName": "Jai",
+  "nextAction": "Prepare for technical interview",
+  "nextActionDate": "2026-08-15T10:00:00.000Z",
+  "notes": "Strong match for my React and TypeScript experience."
+}'
+###
+curl -X PATCH http://localhost:7000/api/applications/6a7c44d3d06d6d04ea5a1120
+-H "Content-Type: application/json"
+-d '{
+  "status": "Interview",
+  "nextAction": "Prepare for technical interview",
+  "nextActionDate": "2026-08-15T10:00:00.000Z",
+  "notes": "Interview scheduled successfully."
+}'
+###
+curl -X GET http://localhost:7000/api/applications

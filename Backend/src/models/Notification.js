@@ -1,0 +1,3 @@
+const mongoose=require('mongoose');
+const schema=new mongoose.Schema({userId:{type:String,required:true,index:true},type:{type:String,required:true,trim:true,maxlength:80},title:{type:String,required:true,trim:true,maxlength:160},message:{type:String,required:true,trim:true,maxlength:1000},relatedApplication:{type:mongoose.Schema.Types.ObjectId,ref:'Application',default:null},relatedJob:{type:mongoose.Schema.Types.ObjectId,ref:'Job',default:null},dedupeKey:{type:String,required:true},read:{type:Boolean,default:false,index:true}},{timestamps:true});
+schema.index({userId:1,dedupeKey:1},{unique:true});schema.index({userId:1,createdAt:-1});module.exports=mongoose.model('Notification',schema);

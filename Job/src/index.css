@@ -1,0 +1,427 @@
+/* =========================================================
+   JOBPILOT AI - GLOBAL STYLES
+   Tailwind CSS v4
+   ========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap");
+
+@import "tailwindcss";
+
+/* =========================================================
+   JOBPILOT DESIGN SYSTEM
+   All pages should use these theme values.
+   ========================================================= */
+
+@theme {
+
+  /* =======================================================
+     COLORS
+     ======================================================= */
+
+  --color-primary: #006bea;
+  --color-primary-container: #087cff;
+
+  --color-primary-fixed: #dcecff;
+  --color-primary-fixed-dim: #b6d7ff;
+
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #ffffff;
+  --color-on-primary-fixed: #002e68;
+  --color-on-primary-fixed-variant: #0057bd;
+
+  --color-secondary: #00a86b;
+  --color-secondary-container: #b8f8dc;
+
+  --color-secondary-fixed: #6ffbbe;
+  --color-secondary-fixed-dim: #4edea3;
+
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #00714d;
+  --color-on-secondary-fixed: #002113;
+  --color-on-secondary-fixed-variant: #005236;
+
+  --color-tertiary: #7c4dff;
+  --color-tertiary-container: #ede5ff;
+
+  --color-tertiary-fixed: #ffddb8;
+  --color-tertiary-fixed-dim: #ffb95f;
+
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #ffd4a4;
+  --color-on-tertiary-fixed: #2a1700;
+  --color-on-tertiary-fixed-variant: #653e00;
+
+  --color-background: #f5f7fb;
+  --color-on-background: #17191d;
+
+  --color-surface: #ffffff;
+  --color-surface-bright: #ffffff;
+  --color-surface-dim: #e5e8ee;
+
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f2f5fa;
+  --color-surface-container: #eaf1fb;
+  --color-surface-container-high: #e1eaf7;
+  --color-surface-container-highest: #d8e3f2;
+
+  --color-surface-variant: #dce2f3;
+
+  --color-on-surface: #17191d;
+  --color-on-surface-variant: #62666d;
+
+  --color-outline: #858a92;
+  --color-outline-variant: #dde2e9;
+
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+
+  --color-inverse-surface: #2a313d;
+  --color-inverse-on-surface: #ebf1ff;
+  --color-inverse-primary: #c3c0ff;
+  --color-surface-tint: #4d44e3;
+
+
+  /* =======================================================
+     BORDER RADIUS
+     ======================================================= */
+
+  --radius-default: 0.25rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1.375rem;
+  --radius-full: 9999px;
+
+
+  /* =======================================================
+     SPACING
+     ======================================================= */
+
+  --spacing-margin-page: 32px;
+  --spacing-stack-lg: 24px;
+  --spacing-stack-md: 16px;
+  --spacing-stack-sm: 8px;
+  --spacing-gutter: 24px;
+  --spacing-sidebar-width: 280px;
+  --spacing-container-max: 1440px;
+
+
+  /* =======================================================
+     FONT FAMILIES
+     ======================================================= */
+
+  --font-title-md: "Inter", sans-serif;
+  --font-body-md: "Inter", sans-serif;
+  --font-title-lg: "Inter", sans-serif;
+  --font-label-md: "Inter", sans-serif;
+  --font-body-lg: "Inter", sans-serif;
+
+  --font-headline-lg: "Hanken Grotesk", sans-serif;
+  --font-headline-md: "Hanken Grotesk", sans-serif;
+  --font-headline-lg-mobile: "Hanken Grotesk", sans-serif;
+  --font-display-lg: "Hanken Grotesk", sans-serif;
+
+
+  /* =======================================================
+     FONT SIZES
+     ======================================================= */
+
+  --text-title-md: 16px;
+  --text-title-md--line-height: 24px;
+  --text-title-md--font-weight: 600;
+
+  --text-body-md: 14px;
+  --text-body-md--line-height: 20px;
+  --text-body-md--font-weight: 400;
+
+  --text-headline-lg: 32px;
+  --text-headline-lg--line-height: 40px;
+  --text-headline-lg--letter-spacing: -0.01em;
+  --text-headline-lg--font-weight: 600;
+
+  --text-title-lg: 20px;
+  --text-title-lg--line-height: 28px;
+  --text-title-lg--font-weight: 600;
+
+  --text-display-lg: 48px;
+  --text-display-lg--line-height: 56px;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-lg--font-weight: 700;
+
+  --text-label-md: 12px;
+  --text-label-md--line-height: 16px;
+  --text-label-md--letter-spacing: 0.02em;
+  --text-label-md--font-weight: 500;
+
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 32px;
+  --text-headline-md--font-weight: 600;
+
+  --text-headline-lg-mobile: 28px;
+  --text-headline-lg-mobile--line-height: 36px;
+  --text-headline-lg-mobile--font-weight: 600;
+
+  --text-body-lg: 16px;
+  --text-body-lg--line-height: 24px;
+  --text-body-lg--font-weight: 400;
+}
+
+
+/* =========================================================
+   GLOBAL RESET / BASE
+   ========================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  background: radial-gradient(circle at 92% -5%, rgba(8,124,255,.17) 0, transparent 28rem), radial-gradient(circle at 15% 75%, rgba(124,77,255,.09) 0, transparent 24rem), #f5f7fb;
+  color: #17191d;
+
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
+button:not(:disabled):hover { transform: translateY(-1px); }
+button:not(:disabled):active { transform: translateY(0) scale(.98); }
+input, textarea, select { transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease; }
+input:focus, textarea:focus, select:focus { outline: none; border-color: #6366f1; box-shadow: 0 0 0 3px rgba(99,102,241,.14); }
+
+main > div, main > section, main > article { animation: page-enter .45s ease both; }
+.interactive-card { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; animation: card-enter .4s ease both; }
+.interactive-card:hover { transform: translateY(-4px); border-color: #a5b4fc; box-shadow: 0 16px 38px rgba(49,46,129,.12); }
+@keyframes page-enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes card-enter { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+a {
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   AMBIENT SHADOWS
+   ========================================================= */
+
+@utility shadow-ambient-lvl1 {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+@utility shadow-ambient-lvl2 {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+@utility shadow-ambient-lvl3 {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+@utility btn-primary-sheen {
+  background: linear-gradient(
+    180deg,
+    #4f46e5 0%,
+    #3525cd 100%
+  );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   INPUT FOCUS
+   ========================================================= */
+
+@utility input-premium {
+  transition: box-shadow 0.2s ease;
+}
+
+.input-premium:focus {
+  outline: none;
+
+  box-shadow:
+    0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+
+/* =========================================================
+   SPARKLINE
+   ========================================================= */
+
+.sparkline {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   MOBILE SAFE AREA
+   ========================================================= */
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+
+/* =========================================================
+   CUSTOM SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f3ff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c7c4d8;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #777587;
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: rgba(8, 124, 255, 0.2);
+  color: #17191d;
+}
+
+/* One UI-inspired application skin */
+header {
+  background: rgba(255,255,255,.82) !important;
+  border-color: rgba(210,218,230,.8) !important;
+  backdrop-filter: blur(18px) saturate(145%);
+}
+
+main, [class*="min-h-screen"] { position: relative; }
+main h1, main h2 {
+  letter-spacing: -.035em;
+  color: #101216;
+}
+
+main > div > h2:first-child,
+main > h2:first-child,
+main section:first-child > h2:first-child {
+  font-size: clamp(2rem, 4vw, 3.15rem) !important;
+  line-height: 1.08 !important;
+  font-weight: 700 !important;
+}
+
+[class*="rounded-xl"][class*="border"] {
+  border-color: rgba(214,221,231,.88);
+  box-shadow: 0 3px 12px rgba(29,50,80,.045), 0 14px 34px rgba(29,50,80,.035);
+}
+
+[class*="rounded-xl"][class*="border"]:hover {
+  border-color: rgba(8,124,255,.28);
+}
+
+.interactive-card {
+  border-radius: 1.5rem !important;
+  background: linear-gradient(145deg,#fff 55%,#f6faff) !important;
+  box-shadow: 0 5px 16px rgba(30,55,90,.06), 0 18px 44px rgba(30,55,90,.045);
+}
+.interactive-card:hover {
+  transform: translateY(-5px) scale(1.005);
+  border-color: rgba(8,124,255,.42);
+  box-shadow: 0 18px 42px rgba(0,107,234,.14);
+}
+
+button[class*="bg-primary"], a[class*="bg-primary"] {
+  background: linear-gradient(135deg,#087cff,#0064df) !important;
+  border: 0;
+  box-shadow: 0 7px 18px rgba(0,107,234,.24);
+}
+button[class*="bg-primary"]:hover, a[class*="bg-primary"]:hover {
+  box-shadow: 0 10px 24px rgba(0,107,234,.32);
+}
+
+button[class*="border-primary"], a[class*="border-primary"] {
+  background: #eef6ff;
+  border-color: #8bc2ff;
+}
+
+input, textarea, select {
+  min-height: 2.75rem;
+  border-radius: .95rem !important;
+  border-color: #d9e0e9 !important;
+  background: rgba(248,250,253,.94);
+}
+input:focus, textarea:focus, select:focus {
+  background: white;
+  border-color: #087cff !important;
+  box-shadow: 0 0 0 4px rgba(8,124,255,.13);
+}
+
+.material-symbols-outlined { transition: transform .22s ease, color .22s ease; }
+button:hover .material-symbols-outlined, a:hover .material-symbols-outlined { transform: scale(1.1); }
+
+aside[class*="fixed"] {
+  background: linear-gradient(180deg,#ffffff 0%,#f4f8ff 62%,#eef4ff 100%) !important;
+  border-right-color: #dce6f4 !important;
+  box-shadow: 12px 0 35px rgba(26,75,135,.055);
+}
+aside nav a { border-radius: 1rem !important; margin-block: .22rem; }
+aside nav a[class*="bg-primary-container"] {
+  background: linear-gradient(135deg,#087cff,#6558f5) !important;
+  color: white !important;
+  border-color: transparent !important;
+  box-shadow: 0 8px 20px rgba(20,101,226,.22);
+}
+
+/* Vivid but consistent semantic cards */
+.grid > [class*="rounded-xl"]:nth-child(5n+1) { --one-accent:#087cff; }
+.grid > [class*="rounded-xl"]:nth-child(5n+2) { --one-accent:#7c4dff; }
+.grid > [class*="rounded-xl"]:nth-child(5n+3) { --one-accent:#00a86b; }
+.grid > [class*="rounded-xl"]:nth-child(5n+4) { --one-accent:#ff5b69; }
+.grid > [class*="rounded-xl"]:nth-child(5n+5) { --one-accent:#ff9f0a; }
+.grid > [class*="rounded-xl"] > .material-symbols-outlined,
+.grid > [class*="rounded-xl"] > div:first-child .material-symbols-outlined { color: var(--one-accent,#087cff) !important; }
+
+@media (max-width: 767px) {
+  main { padding-inline: 1rem !important; }
+  header { padding-inline: 1rem !important; }
+  [class*="rounded-xl"][class*="border"] { border-radius: 1.25rem !important; }
+}

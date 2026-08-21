@@ -1,0 +1,1 @@
+const r=require('express').Router(),a=require('../middleware/asyncHandler'),c=require('../controllers/notificationController'),{requireAuth}=require('../middleware/auth');r.use(requireAuth);r.get('/',a(c.list));r.put('/read-all',a(c.readAll));r.put('/:id/read',a(c.read));module.exports=r;

@@ -1,0 +1,27 @@
+const mongoose=require('mongoose');
+const schema=new mongoose.Schema({
+  userId:{type:String,required:true,unique:true},
+  fileName:{type:String,default:''},
+  originalFilename:{type:String,default:''},
+  storedFilename:{type:String,default:'',select:false},
+  mimeType:{type:String,default:''},
+  fileSize:{type:Number,default:0,min:0},
+  uploadedAt:Date,
+  status:{type:String,enum:['uploaded','processing','ready','failed'],default:'uploaded'},
+  extractedText:{type:String,default:''},
+  extractedAt:Date,
+  extractionStatus:{type:String,enum:['pending','processing','completed','failed'],default:'pending'},
+  extractionError:{type:String,default:''},
+  parsedData:{type:mongoose.Schema.Types.Mixed,default:null},
+  parsingStatus:{type:String,enum:['pending','processing','completed','failed'],default:'pending'},
+  parsingModel:{type:String,default:''},
+  parsingError:{type:String,default:''},
+  fileUrl:{type:String,default:''},
+  rawText:{type:String,default:''},
+  skills:{type:[String],default:[]},
+  experience:{type:[mongoose.Schema.Types.Mixed],default:[]},
+  education:{type:[mongoose.Schema.Types.Mixed],default:[]},
+  projects:{type:[mongoose.Schema.Types.Mixed],default:[]},
+  parsedAt:Date,
+},{timestamps:true});
+module.exports=mongoose.model('Resume',schema);

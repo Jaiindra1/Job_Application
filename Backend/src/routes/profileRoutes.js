@@ -1,0 +1,1 @@
+const r=require('express').Router(),a=require('../middleware/asyncHandler'),c=require('../controllers/profileController'),{requireAuth}=require('../middleware/auth');r.use(requireAuth);r.get('/',a(c.get));r.put('/',a(c.put));module.exports=r;

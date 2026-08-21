@@ -1,0 +1,1 @@
+const r=require('express').Router(),a=require('../middleware/asyncHandler'),c=require('../controllers/applicationController'),{requireAuth}=require('../middleware/auth');r.use(requireAuth);r.post('/',a(c.create));r.get('/',a(c.list));r.get('/:id/events',a(c.events));r.post('/:id/events',a(c.addEvent));r.get('/:id',a(c.getOne));r.patch('/:id',a(c.update));module.exports=r;

@@ -1,0 +1,4 @@
+const mongoose=require('mongoose');
+const schema=new mongoose.Schema({userId:{type:String,required:true,index:true},messageId:{type:String,required:true},threadId:{type:String,required:true},sender:{type:String,default:''},subject:{type:String,default:''},receivedAt:{type:Date,default:null},classification:{type:String,enum:['Application Received','Application Confirmation','Assessment','Interview Invitation','Interview Scheduled','Recruiter Contact','Offer','Rejection','Needs Review'],required:true},classificationConfidence:{type:String,enum:['high','medium','low'],default:'low'},linkedApplication:{type:mongoose.Schema.Types.ObjectId,ref:'Application',default:null,index:true},processedAt:{type:Date,default:null}},{timestamps:true});
+schema.index({userId:1,messageId:1},{unique:true});
+module.exports=mongoose.model('GmailMessage',schema);

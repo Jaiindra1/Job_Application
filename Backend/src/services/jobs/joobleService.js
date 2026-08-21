@@ -1,0 +1,1 @@
+const normalize=require('./jobNormalizer');async function fetchJobs(){if(!process.env.JOOBLE_API_KEY)throw new Error('Jooble is not configured');throw new Error('Jooble HTTP integration is not enabled yet')}module.exports={fetchJobs,normalize:job=>normalize(job,'Jooble')};
