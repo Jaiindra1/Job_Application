@@ -5,14 +5,8 @@ const connectDB=require('./config/database\_connection');
 const {notFound,errorHandler}=require('./middleware/errorMiddleware');
 const app=express();
 app.disable('x-powered-by');
-app.use(
-cors({
-origin: "[https://job-application-jade.vercel.app](https://job-application-jade.vercel.app)",
-methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-allowedHeaders: ["Content-Type", "Authorization"],
-})
-);
-const allowedOrigins=(process.env.CORS\_ORIGIN||'[http://localhost:5173](http://localhost:5173)').split(',').map(value=>value.trim()).filter(Boolean);
+
+const allowedOrigins=(process.env.CORS\_ORIGIN||'[https://job-application-jade.vercel.app/](https://job-application-jade.vercel.app/)').split(',').map(value=>value.trim()).filter(Boolean);
 app.use(cors({origin(origin,callback){if(!origin||allowedOrigins.includes(origin))return callback(null,true);const error=new Error('Origin is not allowed by CORS');error.statusCode=403;callback(error)},methods:['GET','POST','PUT','PATCH','DELETE','OPTIONS'],allowedHeaders:['Content-Type','Authorization'],maxAge:600}));
 app.use((req,res,next)=>{res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('X-Frame-Options','DENY');res.setHeader('Referrer-Policy','no-referrer');res.setHeader('Permissions-Policy','camera=(), microphone=(), geolocation=()');next()});
 app.use(express.json({limit:'1mb'}));
